@@ -1,129 +1,242 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-body {
-    line-height: 1.6;
+body{
+    background:#f5f5f5;
+    color:#222;
+    line-height:1.6;
 }
 
-.container {
-    width: 90%;
-    margin: auto;
-    padding: 40px 0;
+.container{
+    width:90%;
+    margin:auto;
+    padding:60px 0;
 }
 
-header {
-    background: #2D5A27;
-    color: white;
-    padding: 15px;
+/* HEADER */
+
+header{
+    background:#2D5A27;
+    padding:20px 0;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
+header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-nav a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
+header h1{
+    color:white;
 }
 
-.hero {
-    background: url('slike/nakladanje.jpg') center/cover;
-    height: 550px;
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
-    text-align: center;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    transition:0.3s;
 }
 
-
-.btn {
-    background: #FF8C00;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
+nav a:hover{
+    color:#FF8C00;
 }
 
-.services {
-    display: flex;
-    gap: 20px;
+/* HERO */
+
+.hero{
+    background:url('slike/nakladanje.jpg') center/cover;
+    height:600px;
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
 }
 
-.card {
-    background: #f4f4f4;
-    padding: 15px;
-    flex: 1;
-    text-align: center;
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
 }
 
-.card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
+.hero-text{
+    position:relative;
+    z-index:2;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap: 15px;
+.hero-text h2{
+    font-size:60px;
 }
 
-.gallery img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-
-    border-radius: 10px;
-
-    transition: 0.3s;
+.hero-text p{
+    font-size:22px;
+    margin:20px 0;
 }
 
-.gallery img:hover {
-    transform: scale(1.03);
+.btn{
+    background:#FF8C00;
+    padding:12px 25px;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    transition:0.3s;
 }
 
-.before-after {
-    display: flex;
-    gap: 20px;
+.btn:hover{
+    background:#e67600;
 }
 
-.before-after img {
-    width: 100%;
+/* STORITVE */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-.kontakt form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.card{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
 
-.kontakt input, .kontakt textarea {
-    padding: 10px;
+.card:hover{
+    transform:translateY(-5px);
 }
 
-.kontakt button {
-    background: #2D5A27;
-    color: white;
-    padding: 10px;
-    border: none;
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
 }
 
-.map {
-    margin: 20px 0;
+.card h3{
+    padding:15px;
 }
 
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+.card p{
+    padding:0 15px 20px;
+}
+
+/* GALERIJA */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+
+    border-radius:10px;
+
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.03);
+}
+
+/* BEFORE AFTER */
+
+.before-after{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.before-after img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.before,
+.after{
+    background:white;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
+
+/* KONTAKT */
+
+.kontakt form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:20px;
+}
+
+.kontakt input,
+.kontakt textarea{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.kontakt button{
+    background:#2D5A27;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.kontakt button:hover{
+    background:#23461f;
+}
+
+.map{
+    margin-top:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header .container{
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:15px;
+    }
+
+    .hero-text h2{
+        font-size:40px;
+    }
+
+    .before-after{
+        grid-template-columns:1fr;
+    }
+
 }
